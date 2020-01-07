@@ -53,6 +53,9 @@ function callFriend(name) {
 
 //Code Here
 
+let callJake = callFriend('Jake')
+// callJake.dial('435-555-9248)
+
 
 
 ////////// PROBLEM 3 //////////
@@ -86,9 +89,17 @@ function callFriend(name) {
 */
 
 function counterFactory(value) {
-  // Code here.
+  // Code here. // did in class review photo gallery for original and optional alternative ways
+
+  let count = value
 
   return {
+    inc:function (){}
+    return count +=1
+  },
+  dec: function(){
+    return count -=1
+  }
 
   };
 }
@@ -99,7 +110,18 @@ counter = counterFactory(10);
 // counter.inc() // 13
 // counter.dec() // 12
 
+ // Code here.
 
+ return {
+
+};
+}
+
+counter = counterFactory(10);
+// counter.inc() // 11
+// counter.inc() // 12
+// counter.inc() // 13
+// counter.dec() // 12
 
 ////////// PROBLEM 5 //////////
 
@@ -187,10 +209,39 @@ function secretNumber() {
 */
 
 function timeOutCounter() {
-  for (var i = 0; i <= 5; i++) {
+  for (let i = 0; i <= 5; i++) {
     setTimeout(function() {
       console.log(i);
     }, i * 1000);
   }
 }
 timeOutCounter();
+
+
+
+// //This is opttion 1 using closures//
+
+// function timeOutCounter() {
+//   for (var i = 0; i <= 5; i++) {
+//     function count(i){
+//       setTimeout(function() {
+//         console.log(i);
+//       }, i * 1000);
+//   }
+//   count (i)
+// }
+// }
+// timeOutCounter();
+
+
+
+// //option 2 is much simplier, but it requires an understanding of "let" instead of "var" // //
+
+// function timeOutCounter() {
+//   for (let i = 0; i <= 5; i++) {
+//     setTimeout(function() {
+//       console.log(i);
+//     }, i * 1000);
+//   }
+// }
+// timeOutCounter();
